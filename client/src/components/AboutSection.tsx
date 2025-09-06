@@ -1,3 +1,5 @@
+import profilePicture from "../assets/profile-picture.png";
+
 export default function AboutSection() {
   return (
     <section id="about" className="py-20 px-6">
@@ -9,9 +11,9 @@ export default function AboutSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <img 
-              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600" 
-              alt="AI Engineer workspace with multiple monitors and code" 
-              className="rounded-lg shadow-2xl w-full"
+              src={profilePicture} 
+              alt="Ruba Ahmed Khan - AI Engineer" 
+              className="rounded-lg shadow-2xl w-full max-w-md mx-auto"
             />
           </div>
           

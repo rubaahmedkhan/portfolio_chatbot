@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import profilePicture from "../assets/profile-picture.png";
 
 export default function HeroSection() {
   const scrollToContact = () => {
@@ -20,7 +21,7 @@ export default function HeroSection() {
           {/* Professional profile image placeholder */}
           <div className="w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden border-4 border-primary/30">
             <img 
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=800" 
+              src={profilePicture} 
               alt="Ruba Ahmed Khan - Agentic AI Engineer" 
               className="w-full h-full object-cover"
             />

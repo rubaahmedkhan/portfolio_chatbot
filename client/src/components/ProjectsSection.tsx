@@ -1,5 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Brain, Users, Bot, GraduationCap } from "lucide-react";
+import resumeScreeningImg from "../assets/resume-screening.png";
+import attendanceSystemImg from "../assets/attendance-system.png";
+import agenticRagImg from "../assets/agentic-rag.png";
+import educonnectAiImg from "../assets/educonnect-ai.png";
 
 interface ProjectCardProps {
   title: string;
@@ -13,8 +17,18 @@ interface ProjectCardProps {
 
 function ProjectCard({ title, techStack, description, icon, status, projectId, image }: ProjectCardProps) {
   const openProjectPDF = () => {
-    // Placeholder for PDF opening functionality
-    alert(`Opening ${title} project details... (PDF link to be added)`);
+    // Get the PDF URL based on project ID
+    const pdfUrls: Record<string, string> = {
+      'resume-screening': 'https://github.com/rubaahmedkhan/langchain-resume-screener/blob/b838cfe053ca6a0ecdc5bc8e6b39d35c63022cba/Resume%20Screening%20System.pdf',
+      'attendance-system': 'https://github.com/rubaahmedkhan/Attendance-management-system/blob/fe11890dd28b3fb91daf0447a26ce5d7d06aa32e/attendance%20management%20system.pdf',
+      'agentic-rag': 'https://github.com/rubaahmedkhan/Agentic-RAG-System/blob/73c576af50d4f25fef5926bd34a8b8f92d408670/Agentic%20AI%20Rag%20system.pdf',
+      'educonnect-ai': 'https://github.com/rubaahmedkhan/educonnect_ai/blob/33b470d0b0e2642eff6e7a9448c522a5208c94cf/EduConnect_AI_PRD.pdf'
+    };
+    
+    const pdfUrl = pdfUrls[projectId];
+    if (pdfUrl) {
+      window.open(pdfUrl, '_blank');
+    }
   };
 
   return (
@@ -63,7 +77,7 @@ export default function ProjectsSection() {
       description: "Upload resume → System calculates % match with job description. Provides recommendations on missing skills + learning resources. Sends automated emails to candidates & HR. Includes resume preview.",
       icon: <Brain className="h-5 w-5" />,
       projectId: "resume-screening",
-      image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400"
+      image: resumeScreeningImg
     },
     {
       title: "Attendance Management System",
@@ -71,7 +85,7 @@ export default function ProjectsSection() {
       description: "Teacher Dashboard for managing classes. Student Records reuse. Attendance marking. Automated email alerts for parents of absent students. Full data management (add/edit/delete).",
       icon: <Users className="h-5 w-5" />,
       projectId: "attendance-system",
-      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400"
+      image: attendanceSystemImg
     },
     {
       title: "Agentic RAG System",
@@ -79,7 +93,7 @@ export default function ProjectsSection() {
       description: "Scrapes data from websites and videos. Stores embeddings in FAISS & ChromaDB. Provides context-aware answers with RAG pipeline. Built with Agentic design – system decides best source for query.",
       icon: <Bot className="h-5 w-5" />,
       projectId: "agentic-rag",
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400"
+      image: agenticRagImg
     },
     {
       title: "EduConnect AI",
@@ -88,7 +102,7 @@ export default function ProjectsSection() {
       icon: <GraduationCap className="h-5 w-5" />,
       status: "In Progress",
       projectId: "educonnect-ai",
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400"
+      image: educonnectAiImg
     }
   ];
 
