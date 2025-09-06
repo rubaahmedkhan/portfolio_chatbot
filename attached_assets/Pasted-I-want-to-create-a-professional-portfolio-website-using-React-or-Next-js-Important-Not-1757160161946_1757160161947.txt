@@ -1,0 +1,117 @@
+I want to create a professional **portfolio website** using React (or Next.js).  
+
+⚡ Important Notes:  
+1. The **images/screenshots** I provide are ONLY for **design reference** (colors, layout, sections).  
+   → Do NOT copy the text from those images.  
+   → Instead, use the actual text and details that I am providing below.  
+2. The website must be responsive, modern, and professional with a dark theme + gradient highlights (similar to the reference images).  
+3. Each section should be a clean component (Header, Home, About, Skills, Projects, Education, Contact).  
+
+---
+
+## Website Content to Use:
+
+### Hero Section (Home Page)
+Hi, I'm **Ruba Ahmed Khan**  
+🚀 *Agentic AI Engineer | AI Product Developer | RAG & LLM Applications*  
+
+Solving real-world problems with AI-powered applications, specializing in Agentic AI Systems, RAG Pipelines, and AI-driven Automation.  
+I build products that combine intelligence, automation, and scalability.  
+
+Include two buttons:  
+- "Connect with Me" (scrolls to contact section)  
+- "My Resume" (add placeholder link for now)  
+
+---
+
+### About Me Section
+I am an AI Engineer with a background in Mathematics and a strong focus on Agentic AI systems. My passion lies in designing AI agents that can reason, use tools, and provide intelligent support across real-world domains.  
+
+Over the past few years, I have worked extensively on projects in the education sector, where I leverage Agentic AI to build systems that guide students, generate personalized feedback, and connect learners with the right resources.  
+
+I specialize in combining LLMs, RAG pipelines, and automation workflows to create scalable AI products. My work ranges from intelligent resume screening systems to EduConnect AI, an ongoing project that redefines how students interact with knowledge using Agentic AI.  
+
+My long-term vision is to contribute as a specialist in Agentic AI, developing applications that make learning more accessible, personalized, and impactful.  
+
+---
+
+### Skills Section
+Make a table or skill cards with categories:  
+
+**Languages & Frameworks**  
+- Python (Advanced), JavaScript/TypeScript (Intermediate), LangChain (Advanced), Streamlit (Advanced), FastAPI (Intermediate), OpenAI Agent SDK (Advanced)  
+
+**Databases & Vector Stores**  
+- FAISS (Advanced), ChromaDB (Advanced), Qdrant (Intermediate)  
+
+**Tools & Platforms**  
+- Git (Intermediate), Anaconda (Advanced), Docker (Beginner–Intermediate), Linux (Intermediate), n8n (Intermediate)  
+
+**AI / ML**  
+- Gemini (Google AI) (Advanced), OpenAI (GPT Models) (Advanced), Hugging Face (Intermediate), Agent-based AI Systems (Advanced), MCP (Model Context Protocol) (Intermediate)  
+
+---
+
+### Featured Projects Section
+Show projects as **cards** (grid layout). Each card should have:  
+- Project Title  
+- Short description (from my text below)  
+- Tech Stack (small subtitle)  
+- "Read More" button → When clicked, it should open the **detailed PDF file** for that project (use placeholder PDF links for now).  
+
+#### 📌 AI Resume Screening System  
+Tech Stack: LangChain | Streamlit | SMTP | AI Agents  
+- Upload resume → System calculates % match with job description  
+- Provides recommendations on missing skills + learning resources  
+- Sends automated emails to candidates & HR  
+- Includes resume preview  
+
+#### 📌 Attendance Management System  
+Tech Stack: n8n | Lovable AI | Email Integration  
+- Teacher Dashboard for managing classes  
+- Student Records reuse  
+- Attendance marking  
+- Automated email alerts for parents of absent students  
+- Full data management (add/edit/delete)  
+
+#### 📌 Agentic RAG System  
+Tech Stack: Python | OpenAI Agent SDK | FAISS | ChromaDB | Web Scraping | Video Processing  
+- Scrapes data from websites and videos  
+- Stores embeddings in FAISS & ChromaDB  
+- Provides context-aware answers with RAG pipeline  
+- Built with Agentic design – system decides best source for query  
+
+#### 📌 EduConnect AI (In Progress)  
+Tech Stack: Agentic AI | LangChain | RAG | Streamlit | SMTP  
+- Upload Excel with student marks & emails  
+- System generates personalized feedback + class recommendations  
+- Emails each student directly with their feedback  
+
+---
+
+### Education Section
+- **BS in Mathematics** – University of Karachi  
+- **Panaversity** — Specialization in **Agentic AI for Education & Automation**  
+
+---
+
+### Contact Section
+Show **icons + links** for:  
+- 📧 Email: rubaahmedkhan786@gmail.com  
+- 💼 LinkedIn: [https://www.linkedin.com/in/rubaukhan/](https://www.linkedin.com/in/rubaukhan/)  
+- 🐙 GitHub: [https://github.com/rubaahmedkhan](https://github.com/rubaahmedkhan)  
+
+Also include a simple **contact form** (Name, Email, Message).  
+
+---
+
+## Extra Requirements:
+- Navbar with smooth scroll → Home, About Me, Skills, Projects, Education, Contact.  
+- Gradient styling on headings (purple–orange like in reference).  
+- Buttons with hover effects.  
+- Project cards should be clickable and open PDFs in a new tab.  
+- Fully responsive (desktop + mobile).  
+
+---
+
+⚡ Please generate the complete React codebase with all components, styling (CSS/Styled Components/Tailwind), and placeholder assets. I should be able to copy–paste this into Replit and run it directly.
