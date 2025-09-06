@@ -19,11 +19,12 @@ export default function HeroSection() {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center">
           {/* Professional profile image placeholder */}
-          <div className="w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/20 bg-gradient-to-br from-primary/10 to-primary/20">
+          <div className="w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/20">
             <img 
               src={profilePicture} 
               alt="Ruba Ahmed Khan - Agentic AI Engineer" 
-              className="w-full h-full object-cover object-top scale-[2.2] translate-y-2"
+              className="w-full h-full object-cover scale-[3] translate-y-[-20px] translate-x-[-10px]"
+              style={{objectPosition: '50% 30%'}}
             />
           </div>
           

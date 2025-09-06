@@ -10,11 +10,12 @@ export default function AboutSection() {
         
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="flex justify-center">
-            <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/20 bg-gradient-to-br from-primary/10 to-primary/20">
+            <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/20">
               <img 
                 src={profilePicture} 
                 alt="Ruba Ahmed Khan - AI Engineer" 
-                className="w-full h-full object-cover object-top scale-[2.2] translate-y-4"
+                className="w-full h-full object-cover scale-[3] translate-y-[-30px] translate-x-[-15px]"
+                style={{objectPosition: '50% 30%'}}
               />
             </div>
           </div>
