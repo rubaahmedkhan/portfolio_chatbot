@@ -14,6 +14,7 @@ import { apiRequest } from "@/lib/queryClient";
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
   email: z.string().email("Please enter a valid email address"),
+  subject: z.string().min(5, "Subject must be at least 5 characters").max(200, "Subject must be less than 200 characters"),
   message: z.string().min(10, "Message must be at least 10 characters").max(1000, "Message must be less than 1000 characters"),
 });
 
@@ -27,6 +28,7 @@ export default function ContactSection() {
     defaultValues: {
       name: "",
       email: "",
+      subject: "",
       message: "",
     },
   });
@@ -148,6 +150,24 @@ export default function ContactSection() {
                           placeholder="Enter your email" 
                           {...field}
                           data-testid="input-email"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                
+                <FormField
+                  control={form.control}
+                  name="subject"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Subject</FormLabel>
+                      <FormControl>
+                        <Input 
+                          placeholder="Enter subject" 
+                          {...field}
+                          data-testid="input-subject"
                         />
                       </FormControl>
                       <FormMessage />
