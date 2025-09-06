@@ -9,12 +9,14 @@ export default function AboutSection() {
         </h2>
         
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <img 
-              src={profilePicture} 
-              alt="Ruba Ahmed Khan - AI Engineer" 
-              className="rounded-lg shadow-2xl w-full max-w-md mx-auto"
-            />
+          <div className="flex justify-center">
+            <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/20">
+              <img 
+                src={profilePicture} 
+                alt="Ruba Ahmed Khan - AI Engineer" 
+                className="w-full h-full object-cover object-center scale-150 translate-y-8"
+              />
+            </div>
           </div>
           
           <div className="space-y-6">

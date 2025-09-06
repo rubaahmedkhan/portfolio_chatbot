@@ -1,9 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Brain, Users, Bot, GraduationCap } from "lucide-react";
-import resumeScreeningImg from "../assets/resume-screening.png";
-import attendanceSystemImg from "../assets/attendance-system.png";
-import agenticRagImg from "../assets/agentic-rag.png";
-import educonnectAiImg from "../assets/educonnect-ai.png";
 
 interface ProjectCardProps {
   title: string;
@@ -77,7 +73,7 @@ export default function ProjectsSection() {
       description: "Upload resume → System calculates % match with job description. Provides recommendations on missing skills + learning resources. Sends automated emails to candidates & HR. Includes resume preview.",
       icon: <Brain className="h-5 w-5" />,
       projectId: "resume-screening",
-      image: resumeScreeningImg
+      image: "https://github.com/rubaahmedkhan/langchain-resume-screener/blob/e40957354a10a7b5b96cf06982652a08ad3c9d96/AI%20(4).png?raw=true"
     },
     {
       title: "Attendance Management System",
@@ -85,7 +81,7 @@ export default function ProjectsSection() {
       description: "Teacher Dashboard for managing classes. Student Records reuse. Attendance marking. Automated email alerts for parents of absent students. Full data management (add/edit/delete).",
       icon: <Users className="h-5 w-5" />,
       projectId: "attendance-system",
-      image: attendanceSystemImg
+      image: "https://github.com/rubaahmedkhan/Attendance-management-system/blob/1e7de32e907bd291416b40ed70b9927ef2f91503/image.jpg?raw=true"
     },
     {
       title: "Agentic RAG System",
@@ -93,7 +89,7 @@ export default function ProjectsSection() {
       description: "Scrapes data from websites and videos. Stores embeddings in FAISS & ChromaDB. Provides context-aware answers with RAG pipeline. Built with Agentic design – system decides best source for query.",
       icon: <Bot className="h-5 w-5" />,
       projectId: "agentic-rag",
-      image: agenticRagImg
+      image: "https://github.com/rubaahmedkhan/Agentic-RAG-System/blob/a1f30c6559b2a87445c048b27f5e2c796e8c1d88/AgenticRag.jpg?raw=true"
     },
     {
       title: "EduConnect AI",
@@ -102,7 +98,7 @@ export default function ProjectsSection() {
       icon: <GraduationCap className="h-5 w-5" />,
       status: "In Progress",
       projectId: "educonnect-ai",
-      image: educonnectAiImg
+      image: "https://github.com/rubaahmedkhan/educonnect_ai/blob/faf84914c7d19474288302c7be097b55bd8ef30b/EduConnect%20AI%20(1).png?raw=true"
     }
   ];
 
