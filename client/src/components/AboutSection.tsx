@@ -10,10 +10,9 @@ export default function AboutSection() {
           <div className="flex justify-center">
             <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/20">
               <img 
-                src="https://github.com/rubaahmedkhan/educonnect_ai/blob/bd2bd3558a1842e804df00ac873064279e849599/rubaphoto%20(2).jpeg?raw=true" 
+                src="https://raw.githubusercontent.com/rubaahmedkhan/educonnect_ai/bd2bd3558a1842e804df00ac873064279e849599/rubaphoto%20(2).jpeg" 
                 alt="Ruba Ahmed Khan - AI Engineer" 
-                className="w-full h-full object-cover scale-[3] translate-y-[-30px] translate-x-[-15px]"
-                style={{objectPosition: '50% 30%'}}
+                className="w-full h-full object-cover object-center"
               />
             </div>
           </div>
