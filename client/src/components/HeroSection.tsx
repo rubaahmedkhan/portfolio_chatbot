@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import profilePicture from "../assets/profile-picture.png";
 
 export default function HeroSection() {
   const scrollToContact = () => {
@@ -21,7 +20,7 @@ export default function HeroSection() {
           {/* Professional profile image placeholder */}
           <div className="w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/20">
             <img 
-              src={profilePicture} 
+              src="https://github.com/rubaahmedkhan/educonnect_ai/blob/bd2bd3558a1842e804df00ac873064279e849599/rubaphoto%20(2).jpeg?raw=true" 
               alt="Ruba Ahmed Khan - Agentic AI Engineer" 
               className="w-full h-full object-cover scale-[3] translate-y-[-20px] translate-x-[-10px]"
               style={{objectPosition: '50% 30%'}}
