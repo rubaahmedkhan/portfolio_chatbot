@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruba Ahmed Khan - Agentic AI Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    borderRadius: {
+                        lg: "var(--radius)",
+                        md: "calc(var(--radius) - 2px)",
+                        sm: "calc(var(--radius) - 4px)",
+                    },
+                    colors: {
+                        background: "var(--background)",
+                        foreground: "var(--foreground)",
+                        card: {
+                            DEFAULT: "var(--card)",
+                            foreground: "var(--card-foreground)",
+                        },
+                        primary: {
+                            DEFAULT: "var(--primary)",
+                            foreground: "var(--primary-foreground)",
+                        },
+                        secondary: {
+                            DEFAULT: "var(--secondary)",
+                            foreground: "var(--secondary-foreground)",
+                        },
+                        muted: {
+                            DEFAULT: "var(--muted)",
+                            foreground: "var(--muted-foreground)",
+                        },
+                        accent: {
+                            DEFAULT: "var(--accent)",
+                            foreground: "var(--accent-foreground)",
+                        },
+                        border: "var(--border)",
+                        input: "var(--input)",
+                        ring: "var(--ring)",
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                },
+            }
+        };
+    </script>
+    <style>
+        :root {
+            --background: hsl(240 10% 4%);
+            --foreground: hsl(0 0% 98%);
+            --card: hsl(240 10% 8%);
+            --card-foreground: hsl(0 0% 95%);
+            --primary: hsl(262 83% 58%);
+            --primary-foreground: hsl(0 0% 98%);
+            --secondary: hsl(240 4% 16%);
+            --secondary-foreground: hsl(0 0% 90%);
+            --muted: hsl(240 4% 16%);
+            --muted-foreground: hsl(240 5% 65%);
+            --accent: hsl(240 4% 16%);
+            --accent-foreground: hsl(0 0% 90%);
+            --border: hsl(240 6% 20%);
+            --input: hsl(240 6% 20%);
+            --ring: hsl(262 83% 58%);
+            --radius: 0.5rem;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background: var(--background);
+            color: var(--foreground);
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #8b5cf6 0%, #f97316 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .gradient-border {
+            background: linear-gradient(135deg, #8b5cf6 0%, #f97316 100%);
+            padding: 2px;
+            border-radius: 0.5rem;
+        }
+        
+        .gradient-border > div {
+            background: var(--card);
+            border-radius: calc(0.5rem - 2px);
+            padding: 1.5rem;
+            height: 100%;
+        }
+        
+        .skill-bar {
+            background: linear-gradient(90deg, #8b5cf6 0%, #f97316 100%);
+        }
+
+        .navbar-blur {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        @media (max-width: 768px) {
+            .hero-text {
+                font-size: 2.5rem;
+                line-height: 1.1;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- @COMPONENT: Navigation [Fixed navbar with smooth scroll] -->
+    <nav class="fixed top-0 w-full z-50 navbar-blur bg-background/80 border-b border-border">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold gradient-text" data-mock="true">Ruba Khan</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-primary transition-colors duration-300" data-event="click:scrollToSection">Home</a>
+                    <a href="#about" class="hover:text-primary transition-colors duration-300" data-event="click:scrollToSection">About</a>
+                    <a href="#skills" class="hover:text-primary transition-colors duration-300" data-event="click:scrollToSection">Skills</a>
+                    <a href="#projects" class="hover:text-primary transition-colors duration-300" data-event="click:scrollToSection">Projects</a>
+                    <a href="#education" class="hover:text-primary transition-colors duration-300" data-event="click:scrollToSection">Education</a>
+                    <a href="#contact" class="hover:text-primary transition-colors duration-300" data-event="click:scrollToSection">Contact</a>
+                </div>
+                <button class="md:hidden text-foreground" data-event="click:toggleMobileMenu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden mt-4 pb-4" id="mobile-menu">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="hover:text-primary transition-colors duration-300" data-event="click:scrollToSection">Home</a>
+                    <a href="#about" class="hover:text-primary transition-colors duration-300" data-event="click:scrollToSection">About</a>
+                    <a href="#skills" class="hover:text-primary transition-colors duration-300" data-event="click:scrollToSection">Skills</a>
+                    <a href="#projects" class="hover:text-primary transition-colors duration-300" data-event="click:scrollToSection">Projects</a>
+                    <a href="#education" class="hover:text-primary transition-colors duration-300" data-event="click:scrollToSection">Education</a>
+                    <a href="#contact" class="hover:text-primary transition-colors duration-300" data-event="click:scrollToSection">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- @COMPONENT: Hero Section [Main introduction with profile and CTA] -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center">
+                <!-- Professional profile image placeholder -->
+                <div class="w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden border-4 border-primary/30">
+                    <!-- AI engineer working at computer setup with modern tech background -->
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=800" alt="Ruba Ahmed Khan - Agentic AI Engineer" class="w-full h-full object-cover" data-mock-image="true" data-implementation="Replace with actual professional headshot">
+                </div>
+                
+                <h1 class="hero-text text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                    Hi, I'm <span class="gradient-text" data-bind="name">Ruba Ahmed Khan</span>
+                </h1>
+                
+                <p class="text-xl md:text-2xl mb-6 gradient-text font-semibold">
+                    🚀 Agentic AI Engineer | AI Product Developer | RAG & LLM Applications
+                </p>
+                
+                <p class="text-lg md:text-xl mb-8 text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+                    Solving real-world problems with AI-powered applications, specializing in Agentic AI Systems, RAG Pipelines, and AI-driven Automation. I build products that combine intelligence, automation, and scalability.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-gradient-to-r from-purple-500 to-orange-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-purple-600 hover:to-orange-600 transition-all duration-300 transform hover:scale-105" data-event="click:scrollToContact">
+                        Connect with Me
+                    </button>
+                    <button class="border-2 border-primary text-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300" data-event="click:openResume">
+                        My Resume
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: About Section [Professional background and experience] -->
+    <section id="about" class="py-20 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+                About <span class="gradient-text">Me</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <!-- Professional workspace with AI/tech elements -->
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600" alt="AI Engineer workspace with multiple monitors and code" class="rounded-lg shadow-2xl w-full" data-mock-image="true" data-implementation="Replace with actual workspace photo or professional portrait">
+                </div>
+                
+                <div class="space-y-6">
+                    <p class="text-lg leading-relaxed text-muted-foreground">
+                        I am an AI Engineer with a background in Mathematics and a strong focus on Agentic AI systems. My passion lies in designing AI agents that can reason, use tools, and provide intelligent support across real-world domains.
+                    </p>
+                    
+                    <p class="text-lg leading-relaxed text-muted-foreground">
+                        Over the past few years, I have worked extensively on projects in the education sector, where I leverage Agentic AI to build systems that guide students, generate personalized feedback, and connect learners with the right resources.
+                    </p>
+                    
+                    <p class="text-lg leading-relaxed text-muted-foreground">
+                        I specialize in combining LLMs, RAG pipelines, and automation workflows to create scalable AI products. My work ranges from intelligent resume screening systems to EduConnect AI, an ongoing project that redefines how students interact with knowledge using Agentic AI.
+                    </p>
+                    
+                    <p class="text-lg leading-relaxed text-muted-foreground">
+                        My long-term vision is to contribute as a specialist in Agentic AI, developing applications that make learning more accessible, personalized, and impactful.
+                    </p>
+                    
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-6 mt-8 pt-8 border-t border-border">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold gradient-text">3+</div>
+                            <div class="text-sm text-muted-foreground mt-1">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold gradient-text">15+</div>
+                            <div class="text-sm text-muted-foreground mt-1">Projects Completed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold gradient-text">10+</div>
+                            <div class="text-sm text-muted-foreground mt-1">Happy Clients</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: About Section -->
+
+    <!-- @COMPONENT: Skills Section [Categorized technical skills with progress bars] -->
+    <section id="skills" class="py-20 px-6 bg-secondary/50">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+                My <span class="gradient-text">Skills</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <!-- Languages & Frameworks -->
+                <div class="gradient-border">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 gradient-text">Languages & Frameworks</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">Python</span>
+                                    <span class="text-muted-foreground">Advanced</span>
+                                </div>
+                                <div class="w-full bg-secondary rounded-full h-2">
+                                    <div class="skill-bar h-2 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">JavaScript/TypeScript</span>
+                                    <span class="text-muted-foreground">Intermediate</span>
+                                </div>
+                                <div class="w-full bg-secondary rounded-full h-2">
+                                    <div class="skill-bar h-2 rounded-full" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">LangChain</span>
+                                    <span class="text-muted-foreground">Advanced</span>
+                                </div>
+                                <div class="w-full bg-secondary rounded-full h-2">
+                                    <div class="skill-bar h-2 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">Streamlit</span>
+                                    <span class="text-muted-foreground">Advanced</span>
+                                </div>
+                                <div class="w-full bg-secondary rounded-full h-2">
+                                    <div class="skill-bar h-2 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">FastAPI</span>
+                                    <span class="text-muted-foreground">Intermediate</span>
+                                </div>
+                                <div class="w-full bg-secondary rounded-full h-2">
+                                    <div class="skill-bar h-2 rounded-full" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">OpenAI Agent SDK</span>
+                                    <span class="text-muted-foreground">Advanced</span>
+                                </div>
+                                <div class="w-full bg-secondary rounded-full h-2">
+                                    <div class="skill-bar h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Databases & Vector Stores -->
+                <div class="gradient-border">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 gradient-text">Databases & Vector Stores</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">FAISS</span>
+                                    <span class="text-muted-foreground">Advanced</span>
+                                </div>
+                                <div class="w-full bg-secondary rounded-full h-2">
+                                    <div class="skill-bar h-2 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">ChromaDB</span>
+                                    <span class="text-muted-foreground">Advanced</span>
+                                </div>
+                                <div class="w-full bg-secondary rounded-full h-2">
+                                    <div class="skill-bar h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">Qdrant</span>
+                                    <span class="text-muted-foreground">Intermediate</span>
+                                </div>
+                                <div class="w-full bg-secondary rounded-full h-2">
+                                    <div class="skill-bar h-2 rounded-full" style="width: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold mb-6 mt-8 gradient-text">Tools & Platforms</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">Git</span>
+                                    <span class="text-muted-foreground">Intermediate</span>
+                                </div>
+                                <div class="w-full bg-secondary rounded-full h-2">
+                                    <div class="skill-bar h-2 rounded-full" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">Docker</span>
+                                    <span class="text-muted-foreground">Intermediate</span>
+                                </div>
+                                <div class="w-full bg-secondary rounded-full h-2">
+                                    <div class="skill-bar h-2 rounded-full" style="width: 65%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">Linux</span>
+                                    <span class="text-muted-foreground">Intermediate</span>
+                                </div>
+                                <div class="w-full bg-secondary rounded-full h-2">
+                                    <div class="skill-bar h-2 rounded-full" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">n8n</span>
+                                    <span class="text-muted-foreground">Intermediate</span>
+                                </div>
+                                <div class="w-full bg-secondary rounded-full h-2">
+                                    <div class="skill-bar h-2 rounded-full" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AI/ML -->
+                <div class="gradient-border lg:col-span-2">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 gradient-text">AI / ML</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-medium">Gemini (Google AI)</span>
+                                        <span class="text-muted-foreground">Advanced</span>
+                                    </div>
+                                    <div class="w-full bg-secondary rounded-full h-2">
+                                        <div class="skill-bar h-2 rounded-full" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-medium">OpenAI (GPT Models)</span>
+                                        <span class="text-muted-foreground">Advanced</span>
+                                    </div>
+                                    <div class="w-full bg-secondary rounded-full h-2">
+                                        <div class="skill-bar h-2 rounded-full" style="width: 95%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-medium">Hugging Face</span>
+                                        <span class="text-muted-foreground">Intermediate</span>
+                                    </div>
+                                    <div class="w-full bg-secondary rounded-full h-2">
+                                        <div class="skill-bar h-2 rounded-full" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-medium">Agent-based AI Systems</span>
+                                        <span class="text-muted-foreground">Advanced</span>
+                                    </div>
+                                    <div class="w-full bg-secondary rounded-full h-2">
+                                        <div class="skill-bar h-2 rounded-full" style="width: 95%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-medium">MCP (Model Context Protocol)</span>
+                                        <span class="text-muted-foreground">Intermediate</span>
+                                    </div>
+                                    <div class="w-full bg-secondary rounded-full h-2">
+                                        <div class="skill-bar h-2 rounded-full" style="width: 70%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Skills Section -->
+
+    <!-- @COMPONENT: Projects Section [Featured project cards with hover effects] -->
+    <section id="projects" class="py-20 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+                Featured <span class="gradient-text">Projects</span>
+            </h2>
+            
+            <!-- @MAP: projects.map(project => ( -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- AI Resume Screening System -->
+                <div class="group bg-card border border-border rounded-lg overflow-hidden hover:border-primary/50 transition-all duration-300 transform hover:scale-105">
+                    <!-- AI-powered resume analysis dashboard interface -->
+                    <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400" alt="AI Resume Screening System Dashboard" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300" data-mock-image="true" data-implementation="Use project screenshot or relevant tech image">
+                    
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <i class="fas fa-brain text-primary"></i>
+                            <h3 class="text-xl font-bold">AI Resume Screening System</h3>
+                        </div>
+                        
+                        <p class="text-sm text-primary mb-3 font-medium">LangChain | Streamlit | SMTP | AI Agents</p>
+                        
+                        <p class="text-muted-foreground mb-4 leading-relaxed">
+                            Upload resume → System calculates % match with job description. Provides recommendations on missing skills + learning resources. Sends automated emails to candidates & HR. Includes resume preview.
+                        </p>
+                        
+                        <button class="w-full bg-gradient-to-r from-purple-500 to-orange-500 text-white py-2 px-4 rounded-lg font-medium hover:from-purple-600 hover:to-orange-600 transition-all duration-300" data-event="click:openProjectPDF" data-project="resume-screening">
+                            <i class="fas fa-external-link-alt mr-2"></i>Read More
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Attendance Management System -->
+                <div class="group bg-card border border-border rounded-lg overflow-hidden hover:border-primary/50 transition-all duration-300 transform hover:scale-105">
+                    <!-- School attendance tracking interface with student data -->
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400" alt="Attendance Management System Interface" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300" data-mock-image="true" data-implementation="Use project screenshot or education tech image">
+                    
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <i class="fas fa-users text-primary"></i>
+                            <h3 class="text-xl font-bold">Attendance Management System</h3>
+                        </div>
+                        
+                        <p class="text-sm text-primary mb-3 font-medium">n8n | Lovable AI | Email Integration</p>
+                        
+                        <p class="text-muted-foreground mb-4 leading-relaxed">
+                            Teacher Dashboard for managing classes. Student Records reuse. Attendance marking. Automated email alerts for parents of absent students. Full data management (add/edit/delete).
+                        </p>
+                        
+                        <button class="w-full bg-gradient-to-r from-purple-500 to-orange-500 text-white py-2 px-4 rounded-lg font-medium hover:from-purple-600 hover:to-orange-600 transition-all duration-300" data-event="click:openProjectPDF" data-project="attendance-system">
+                            <i class="fas fa-external-link-alt mr-2"></i>Read More
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Agentic RAG System -->
+                <div class="group bg-card border border-border rounded-lg overflow-hidden hover:border-primary/50 transition-all duration-300 transform hover:scale-105">
+                    <!-- AI agent processing data from multiple sources with RAG pipeline visualization -->
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400" alt="Agentic RAG System Architecture" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300" data-mock-image="true" data-implementation="Use system architecture diagram or AI visualization">
+                    
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <i class="fas fa-robot text-primary"></i>
+                            <h3 class="text-xl font-bold">Agentic RAG System</h3>
+                        </div>
+                        
+                        <p class="text-sm text-primary mb-3 font-medium">Python | OpenAI Agent SDK | FAISS | ChromaDB | Web Scraping</p>
+                        
+                        <p class="text-muted-foreground mb-4 leading-relaxed">
+                            Scrapes data from websites and videos. Stores embeddings in FAISS & ChromaDB. Provides context-aware answers with RAG pipeline. Built with Agentic design – system decides best source for query.
+                        </p>
+                        
+                        <button class="w-full bg-gradient-to-r from-purple-500 to-orange-500 text-white py-2 px-4 rounded-lg font-medium hover:from-purple-600 hover:to-orange-600 transition-all duration-300" data-event="click:openProjectPDF" data-project="agentic-rag">
+                            <i class="fas fa-external-link-alt mr-2"></i>Read More
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- EduConnect AI -->
+                <div class="group bg-card border border-border rounded-lg overflow-hidden hover:border-primary/50 transition-all duration-300 transform hover:scale-105">
+                    <!-- Educational AI platform interface showing personalized learning recommendations -->
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400" alt="EduConnect AI Learning Platform" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300" data-mock-image="true" data-implementation="Use educational platform screenshot or learning interface">
+                    
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <i class="fas fa-graduation-cap text-primary"></i>
+                            <h3 class="text-xl font-bold">EduConnect AI</h3>
+                            <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded-full">In Progress</span>
+                        </div>
+                        
+                        <p class="text-sm text-primary mb-3 font-medium">Agentic AI | LangChain | RAG | Streamlit | SMTP</p>
+                        
+                        <p class="text-muted-foreground mb-4 leading-relaxed">
+                            Upload Excel with student marks & emails. System generates personalized feedback + class recommendations. Emails each student directly with their feedback.
+                        </p>
+                        
+                        <button class="w-full bg-gradient-to-r from-purple-500 to-orange-500 text-white py-2 px-4 rounded-lg font-medium hover:from-purple-600 hover:to-orange-600 transition-all duration-300" data-event="click:openProjectPDF" data-project="educonnect-ai">
+                            <i class="fas fa-external-link-alt mr-2"></i>Read More
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- @END_MAP )) -->
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Projects Section -->
+
+    <!-- @COMPONENT: Education Section [Academic background and certifications] -->
+    <section id="education" class="py-20 px-6 bg-secondary/50">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+                My <span class="gradient-text">Education</span>
+            </h2>
+            
+            <div class="space-y-8">
+                <div class="bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-university text-white text-lg"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">BS in Mathematics</h3>
+                            <p class="text-primary font-medium mb-2">University of Karachi</p>
+                            <p class="text-muted-foreground">
+                                Strong foundation in mathematical principles, statistics, and analytical thinking - essential skills for AI and machine learning applications.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-robot text-white text-lg"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">Specialization in Agentic AI</h3>
+                            <p class="text-primary font-medium mb-2">Panaversity</p>
+                            <p class="text-muted-foreground">
+                                Specialized training in Agentic AI for Education & Automation, focusing on building intelligent systems that can reason, plan, and execute complex tasks autonomously.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Education Section -->
+
+    <!-- @COMPONENT: Contact Section [Contact form and social links] -->
+    <section id="contact" class="py-20 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+                Get in <span class="gradient-text">Touch</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-8 gradient-text">Let's Talk</h3>
+                    <p class="text-muted-foreground mb-8 text-lg leading-relaxed">
+                        I'm currently available to take on new projects, so feel free to send me a message about anything that you want me to work on. You can contact anytime.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-envelope text-primary text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium">Email</p>
+                                <a href="mailto:rubaahmedkhan786@gmail.com" class="text-muted-foreground hover:text-primary transition-colors">rubaahmedkhan786@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+                                <i class="fab fa-linkedin text-primary text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium">LinkedIn</p>
+                                <a href="https://www.linkedin.com/in/rubaukhan/" target="_blank" class="text-muted-foreground hover:text-primary transition-colors">linkedin.com/in/rubaukhan</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+                                <i class="fab fa-github text-primary text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium">GitHub</p>
+                                <a href="https://github.com/rubaahmedkhan" target="_blank" class="text-muted-foreground hover:text-primary transition-colors">github.com/rubaahmedkhan</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="bg-card border border-border rounded-lg p-6">
+                    <form class="space-y-6" data-event="submit:handleContactForm" data-implementation="Form submission should include validation and email sending">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Your Name</label>
+                            <input 
+                                type="text" 
+                                class="w-full px-4 py-3 bg-input border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-300" 
+                                placeholder="Enter your name" 
+                                required 
+                                data-mock="true"
+                                data-bind="form.name"
+                            />
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Your Email</label>
+                            <input 
+                                type="email" 
+                                class="w-full px-4 py-3 bg-input border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-300" 
+                                placeholder="Enter your email" 
+                                required
+                                data-mock="true"
+                                data-bind="form.email"
+                            />
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Write your message here</label>
+                            <textarea 
+                                rows="5" 
+                                class="w-full px-4 py-3 bg-input border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-300 resize-none" 
+                                placeholder="Enter your message" 
+                                required
+                                data-mock="true"
+                                data-bind="form.message"
+                            ></textarea>
+                        </div>
+                        
+                        <button 
+                            type="submit" 
+                            class="w-full bg-gradient-to-r from-purple-500 to-orange-500 text-white py-3 px-6 rounded-lg font-semibold hover:from-purple-600 hover:to-orange-600 transition-all duration-300 transform hover:scale-105"
+                        >
+                            Submit Now
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Contact Section -->
+
+    <!-- @COMPONENT: Footer [Simple footer with social links] -->
+    <footer class="py-8 px-6 border-t border-border">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="text-center md:text-left">
+                    <p class="text-muted-foreground">
+                        © 2024 <span class="gradient-text font-semibold">Ruba Ahmed Khan</span>. All rights reserved.
+                    </p>
+                </div>
+                
+                <div class="flex gap-4">
+                    <a href="https://www.linkedin.com/in/rubaukhan/" target="_blank" class="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center hover:bg-primary/30 transition-colors">
+                        <i class="fab fa-linkedin text-primary"></i>
+                    </a>
+                    <a href="https://github.com/rubaahmedkhan" target="_blank" class="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center hover:bg-primary/30 transition-colors">
+                        <i class="fab fa-github text-primary"></i>
+                    </a>
+                    <a href="mailto:rubaahmedkhan786@gmail.com" class="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center hover:bg-primary/30 transition-colors">
+                        <i class="fas fa-envelope text-primary"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        // Mobile menu toggle
+        (function() {
+            const mobileMenuButton = document.querySelector('[data-event="click:toggleMobileMenu"]');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        })();
+
+        // Smooth scroll for navigation links
+        (function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        // Close mobile menu if open
+                        const mobileMenu = document.getElementById('mobile-menu');
+                        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+        })();
+
+        // Project PDF handlers (placeholder functionality)
+        (function() {
+            document.querySelectorAll('[data-event*="openProjectPDF"]').forEach(button => {
+                button.addEventListener('click', function() {
+                    const project = this.getAttribute('data-project');
+                    // TODO: Implement actual PDF opening functionality
+                    alert(`Opening ${project} project details... (Placeholder: Implement PDF viewer)`);
+                    // window.open(`/pdfs/${project}.pdf`, '_blank');
+                });
+            });
+        })();
+
+        // Resume button handler
+        (function() {
+            const resumeButton = document.querySelector('[data-event="click:openResume"]');
+            if (resumeButton) {
+                resumeButton.addEventListener('click', function() {
+                    // TODO: Implement actual resume PDF opening
+                    alert('Opening resume... (Placeholder: Add actual resume PDF link)');
+                    // window.open('/resume.pdf', '_blank');
+                });
+            }
+        })();
+
+        // Contact form handler
+        (function() {
+            const contactForm = document.querySelector('[data-event*="handleContactForm"]');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // TODO: Implement actual form submission with validation and email sending
+                    const formData = new FormData(this);
+                    alert('Thank you for your message! I will get back to you soon. (Placeholder: Implement actual form submission)');
+                    this.reset();
+                });
+            }
+        })();
+
+        // Connect with me button scroll to contact
+        (function() {
+            const connectButton = document.querySelector('[data-event="click:scrollToContact"]');
+            if (connectButton) {
+                connectButton.addEventListener('click', function() {
+                    document.getElementById('contact').scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                });
+            }
+        })();
+
+        // Intersection Observer for navbar highlighting (optional enhancement)
+        (function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const targetLink = document.querySelector(`nav a[href="#${entry.target.id}"]`);
+                        navLinks.forEach(link => link.classList.remove('text-primary'));
+                        if (targetLink) {
+                            targetLink.classList.add('text-primary');
+                        }
+                    }
+                });
+            }, {
+                threshold: 0.3,
+                rootMargin: '-100px 0px -100px 0px'
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        })();
+    </script>
+</body>
+</html>
