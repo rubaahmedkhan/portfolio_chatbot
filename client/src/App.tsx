@@ -22,6 +22,24 @@ function App() {
         <div className="dark">
           <Toaster />
           <Router />
+
+          {/* 🔹 Lovable Chatbot Embed */}
+          <div
+            style={{
+              position: "fixed",
+              bottom: "20px",
+              right: "20px",
+              zIndex: 1000,
+            }}
+          >
+            <iframe
+              src="https://ruba-knows-all.lovable.app/"
+              width="350"
+              height="500"
+              style={{ border: "none", borderRadius: "12px" }}
+              title="chatbot"
+            />
+          </div>
         </div>
       </TooltipProvider>
     </QueryClientProvider>
@@ -29,3 +47,5 @@ function App() {
 }
 
 export default App;
+
+        
